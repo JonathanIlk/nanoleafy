@@ -1,17 +1,18 @@
-# nanoleaves
+# nanoleafy
 
 A command-line tool for interacting with your Nanoleaf Aurora. Also includes a full API client for the Aurora!
 
-[![Build Status](https://travis-ci.org/ceejbot/nanoleaves.svg?branch=master)](https://travis-ci.org/ceejbot/nanoleaves) [![Coverage Status](https://coveralls.io/repos/github/ceejbot/nanoleaves/badge.svg?branch=master)](https://coveralls.io/github/ceejbot/nanoleaves?branch=master) [![on npm](http://img.shields.io/npm/v/nanoleaves.svg?style=flat)](https://www.npmjs.org/package/nanoleaves)
+Fork from [nanoleaves](https://github.com/JonathanIlk/nanoleafy/commits/master) by C J Silverio <ceejceej@gmail.com> to work with the latest nanoleaves APIs (March 2019).
+
 
 ## CLI usage
 
 Provide the IP address of your Aurora in the environment variable `AURORA_HOST` and your API access token in `AURORA_TOKEN`. If your AURORA is listening on an unusual port, use `AURORA_PORT`.
 
-To generate a token, hold the power key until the light starts flashing, then run `nanoleaves token`.
+To generate a token, hold the power key until the light starts flashing, then run `nanoleafy token`.
 
 ```
-$ nanoleaves --help
+$ nanoleafy --help
 Commands:
   animation <name>          get details about the given animation effect
   brightness [number]       get or set the overall brightness
@@ -39,7 +40,7 @@ Options:
 ## API usage
 
 ```js
-const AuroraAPI = require('nanoleaves');
+const AuroraAPI = require('nanoleafy');
 const aurora = new AuroraAPI({
     host: '10.0.0.2',
     token: 'your-api-token'
@@ -90,7 +91,7 @@ aurora.setStaticPanel(panel);
 This code does the equivalent with a full panel object:
 
 ```js
-const Aurora = require('nanoleaves');
+const Aurora = require('nanoleafy');
 
 const aurora = new Aurora();
 const panel = new Aurora.Panel('100');
@@ -111,7 +112,7 @@ const list = [
 aurora.setStaticPanel(list);
 ```
 
-There's an example of setting an entire static animation display in [examples/static-display.js](examples/static-display.js). Use `nanoleaves panels` to get a list of valid panel ids for your setup.
+There's an example of setting an entire static animation display in [examples/static-display.js](examples/static-display.js). Use `nanoleafy panels` to get a list of valid panel ids for your setup.
 
 ## License
 

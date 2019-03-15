@@ -81,7 +81,8 @@ All API functions return promises.
 
 ## Static panel structure
 
-The `setStaticPanel()` function pokes a single color into a specific panel. It is only useful for single frame static displays.  You can call this a couple of ways. This snippet sets panel id 100 to black:
+The `setStaticPanel()` function pokes a single color into a specific panel or multiple panels.
+It is only useful for single frame static displays.  You can call this a couple of ways. This snippet sets panel id 100 to black:
 
 ```js
 const panel = { id: '100', r: 0,  g: 0,  b: 0 };
@@ -98,8 +99,7 @@ const aurora = new AuroraAPI({
     token: 'your-api-token'
 });
 
-const aurora = new Aurora();
-const panel = new Aurora.Panel('100');
+const panel = new AuroraAPI.Panel('100');
 panel.frames = [{ r: 0, g: 0, b: 0, w: 0, transition: 50}];
 
 aurora.setStaticPanel(panel);
@@ -117,7 +117,11 @@ const list = [
 aurora.setStaticPanel(list);
 ```
 
-There's an example of setting an entire static animation display in [examples/static-display.js](examples/static-display.js). Use `nanoleafy panels` to get a list of valid panel ids for your setup.
+If there is an Animation active when setting the static panels, the other panels that are not included in the command will return to the last configuration they retrieved from the static command.
+
+
+There's an example of setting an entire static animation display in [examples/static-display.js](examples/static-display.js).
+Use `nanoleafy panels` from the CLI to get a list of valid panel ids for your setup or get them prgrammatically via the `layout()` command.
 
 ## License
 

@@ -40,7 +40,7 @@ Options:
 ## API usage
 
 ```js
-const AuroraAPI = require('nanoleafy');
+const AuroraAPI = require('nanoleafy-js');
 const aurora = new AuroraAPI({
     host: '10.0.0.2',
     token: 'your-api-token'
@@ -91,7 +91,7 @@ aurora.setStaticPanel(panel);
 This code does the equivalent with a full panel object:
 
 ```js
-const Aurora = require('nanoleafy');
+const Aurora = require('nanoleafy-js');
 
 const aurora = new Aurora();
 const panel = new Aurora.Panel('100');

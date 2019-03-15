@@ -91,7 +91,12 @@ aurora.setStaticPanel(panel);
 This code does the equivalent with a full panel object:
 
 ```js
-const Aurora = require('nanoleafy-js');
+const AuroraAPI = require('nanoleafy-js');
+
+const aurora = new AuroraAPI({
+    host: '10.0.0.2',
+    token: 'your-api-token'
+});
 
 const aurora = new Aurora();
 const panel = new Aurora.Panel('100');
